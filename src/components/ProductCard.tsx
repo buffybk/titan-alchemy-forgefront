@@ -17,7 +17,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <Card className="group overflow-hidden hover-lift">
+    <Card className="group overflow-hidden hover-lift bg-black/80 border-primary/20 backdrop-blur-sm">
       <div className="aspect-square overflow-hidden">
         <img
           src={product.image}
@@ -26,8 +26,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         />
       </div>
       <CardContent className="p-4">
-        <h3 className="font-semibold text-lg mb-2 line-clamp-2">{product.name}</h3>
-        <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+        <h3 className="font-semibold text-lg mb-2 line-clamp-2 text-white">{product.name}</h3>
+        <p className="text-gray-300 text-sm mb-3 line-clamp-2">
           {product.description}
         </p>
         <div className="flex items-center justify-between">
