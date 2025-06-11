@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -16,6 +15,7 @@ export const Register = () => {
     confirmPassword: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -41,10 +41,7 @@ export const Register = () => {
     // Simulate registration
     setTimeout(() => {
       setIsLoading(false);
-      toast({
-        title: "Registration Successful",
-        description: "Welcome to Titan Alchemy! Please check your email to verify your account.",
-      });
+      navigate('/congratulations');
     }, 1000);
   };
 
