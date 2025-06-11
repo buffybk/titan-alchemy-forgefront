@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,6 +10,7 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,10 +19,7 @@ export const Login = () => {
     // Simulate login
     setTimeout(() => {
       setIsLoading(false);
-      toast({
-        title: "Login Successful",
-        description: "Welcome back to Titan Alchemy!",
-      });
+      navigate('/signin-success');
     }, 1000);
   };
 
